@@ -1,0 +1,12 @@
+Sub csvProcess()
+ '  D列挿入
+Worksheets("データ").Columns(4).Insert
+
+Range("D1").Value = "DATE"
+
+Range("D2").Select
+    ActiveCell.FormulaR1C1 = _
+        "=TEXT(DATE(RC[-3],RC[-2],RC[-1]),""yyyy/mm/dd(aaa)"")"
+
+End Sub
+ 
